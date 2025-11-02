@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import Counter from './components/Counter.vue'
 import ShowCounter from './components/ShowCounter.vue'
 import ToDoFetch from './components/ToDoFetch.vue'
+import UpdateList from './components/UpdateList.vue'
 const msg = ref('Vue 14天打卡')
 </script>
 
@@ -17,6 +18,8 @@ const msg = ref('Vue 14天打卡')
   <router-view />
 
   <ToDoFetch />
+
+  <UpdateList />
 </template>
 
 <style scoped></style>
