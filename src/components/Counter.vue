@@ -1,11 +1,13 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-  const count = ref(0)
+import { useCounterStore } from '../stores/counter'
+const counterStore = useCounterStore()
 </script>
 
 <template>
-  <h2>我是子组件计数器：{{count}}</h2>
-  <button @click="count++">按钮</button>
+  <h2>我是子组件计数器：{{ counterStore.count }}</h2>
+  <button @click="counterStore.increment">增加按钮</button>
+  <button @click="counterStore.decrement">减少按钮</button>
+  <p>{{ counterStore.doubleCount }}</p>
 </template>
 
 <style scoped></style>
