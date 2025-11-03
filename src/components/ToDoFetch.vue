@@ -5,10 +5,15 @@ const title = ref('')
 const err = ref('')
 const loading = ref(true)
 const objects = ref<Todo[]>([])
+;(window as any).objects = objects
 interface Todo {
     title: string
     completed: boolean
     id: number
+}
+function add() {
+    const res = { title: '我是新节点', completed: true, id: objects.value.length + 1 }
+    objects.value.push(res)
 }
 onMounted(async () => {
     try {
@@ -28,16 +33,38 @@ onMounted(async () => {
     <div v-else>
         <!-- <p>标题：{{ title }}</p>
         <p v-if="err" style="color: red;">错误信息：{{ err }}</p> -->
-        <ul v-for="item in objects">
-            <li v-if="item.completed">
-                <p>{{ item.id }} : {{ item.title }}</p>
-            </li>
-        </ul>
-        <p v-if="objects.filter(t => t.completed).length == 0">
-            没有已完成的待办事项
-        </p>
+        <transition-group name="fade" tag="ul">
+            <template v-for="item in objects" :key="item.id">
+                <li  v-if="item.completed">{{ item.id }} : {{ item.title }}</li>
+            </template>
+            <!-- <p v-if="objects.filter(t => t.completed).length == 0">
+                没有已完成的待办事项
+            </p> -->
+        </transition-group>
+
     </div>
+    <button @click="add">添加新节点</button>
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-enter-from {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-leave-active {
+    position: absolute;
+    /* 让删除时其它元素平滑补位 */
+}
+</style>
