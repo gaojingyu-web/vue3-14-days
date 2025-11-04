@@ -1,48 +1,32 @@
 # vue3-14-days
 
-This template should help get you started developing with Vue 3 in Vite.
+✅ 用 14 天掌握 Vue3 + TypeScript + Pinia + Vite 全流程  
+✅ 含组件、路由、动画、单元测试、GitHub Pages 部署  
 
-## Recommended IDE Setup
+## 🚀 线上预览
+点击访问：[https://gaojingyu-web.github.io/vue3-14-days](https://gaojingyu-web.github.io/vue3-14-days)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📦 技术栈
+- Vue 3 `&lt;script setup&gt;` & TypeScript
+- Pinia（状态管理）
+- Vue Router 4（路由）
+- Axios（接口）
+- Vitest（单元测试）
+- GitHub Pages（免费托管）
 
-## Recommended Browser Setup
+## 🛠️ 快速开始
+```bash
+# 1. 克隆
+git clone https://github.com/gaojingyu-web/vue3-14-days.git
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+# 2. 安装依赖
+npm i
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+# 3. 启动开发服务器
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
+# 4. 运行单元测试
+npm run test
 
-```sh
+# 5. 打包
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
